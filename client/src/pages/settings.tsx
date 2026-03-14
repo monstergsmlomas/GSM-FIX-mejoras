@@ -381,15 +381,6 @@ export default function SettingsPage() {
         form.setValue("checklistOptions", newItems);
     };
 
-    const handleLogout = async () => {
-        try {
-            await signOut();
-            toast({ title: "Sesión cerrada correctamente" });
-        } catch (error: any) {
-            toast({ title: "Error al cerrar sesión", description: error.message, variant: "destructive" });
-        }
-    };
-
     const handleCheckout = async (planType: string) => {
         let backendPlanId = "";
 
@@ -748,9 +739,6 @@ export default function SettingsPage() {
                             <div className="flex items-center gap-2 w-full sm:w-auto">
                                 <Button type="button" variant="outline" onClick={() => setLocation("/")} className="border-indigo-500/30 text-indigo-400 bg-indigo-500/5 hover:bg-indigo-500/10 hover:text-indigo-300 hover:border-indigo-500/50 transition-all shadow-sm">
                                     <Home className="mr-2 h-4 w-4" /> Ver Landing
-                                </Button>
-                                <Button type="button" variant="outline" onClick={handleLogout} className="border-zinc-800 text-zinc-400 hover:text-red-400 hover:border-red-900/50 hover:bg-red-900/10 transition-all">
-                                    <LogOut className="mr-2 h-4 w-4" /> Salir
                                 </Button>
                                 <Button type="submit" variant="outline" disabled={mutation.isPending} className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 hover:border-primary/40 shadow-sm backdrop-blur-sm transition-all active:scale-95 flex-1 sm:flex-none">
                                     {mutation.isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />} Guardar Cambios
