@@ -216,15 +216,24 @@ export function AppSidebar() {
             <SidebarMenuItem>
               <SidebarMenuButton
                 size="lg"
-                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground hover:bg-muted/50 transition-all group overflow-hidden group-data-[collapsible=icon]:!justify-center group-data-[collapsible=icon]:!p-0"
+                className="h-auto py-3 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground hover:bg-transparent transition-all group overflow-hidden group-data-[collapsible=icon]:!justify-center group-data-[collapsible=icon]:!p-0"
               >
-                <div className="relative flex aspect-square size-8 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0 shadow-sm shadow-primary/20 transition-all duration-300 overflow-hidden">
-                  <Smartphone className="absolute size-5 text-primary/50" strokeWidth={1.5} />
-                  <Wrench className="absolute size-5 text-primary rotate-[-30deg] translate-x-0.5" strokeWidth={2} />
+                {/* 👇 Acá cargamos tu imagen real 👇 */}
+                <div className="relative flex items-center justify-center shrink-0 transition-all duration-300 w-12 h-12 group-data-[collapsible=icon]:w-10 group-data-[collapsible=icon]:h-10 rounded-2xl overflow-hidden shadow-[0_0_15px_rgba(124,58,237,0.2)] border border-white/5">
+                  <img 
+                    src="/logo-fix.png" 
+                    alt="Logo GSM FIX" 
+                    className="w-full h-full object-cover scale-110" 
+                  />
                 </div>
-                <div className={`grid flex-1 text-left text-sm leading-tight ${smoothHideText}`}>
-                  <span className="truncate font-bold text-base tracking-tight text-primary">GSM FIX</span>
-                  <span className="truncate text-[10px] text-muted-foreground uppercase tracking-wider">Sistema de Gestión</span>
+                
+                <div className={`grid flex-1 text-left text-sm leading-tight gap-0.5 ${smoothHideText}`}>
+                  <span className="truncate font-black text-2xl tracking-tighter text-white drop-shadow-sm">
+                    GSM FIX
+                  </span>
+                  <span className="truncate text-[9px] font-bold text-muted-foreground uppercase tracking-widest">
+                    Sistema de Gestión
+                  </span>
                 </div>
               </SidebarMenuButton>
             </SidebarMenuItem>
